@@ -109,7 +109,6 @@ func (h *Handler) DeleteUrl(c *gin.Context) {
 		c.IndentedJSON(http.StatusBadRequest, err.Error())
 		return
 	}
-	// TODO Add DB handler to delete resource
 	c.IndentedJSON(http.StatusOK, fmt.Sprintf("Resource with ID %s deleted", shortUrl))
 }
 
