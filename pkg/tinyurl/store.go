@@ -127,6 +127,9 @@ func getDbResourceStats(db *sql.DB, shortUrl string) (Stats, error) {
 	return response, nil
 }
 
+// getDbResources fetches all the url resources. Pagination is needed
+// to support a higher volume of resources. For now, the limit of
+// resources is capped at 10.
 func getDbResources(db *sql.DB) ([]TinyUrl, error) {
 	stm := "SELECT short_url, long_url, expiration_date FROM urls LIMIT 10"
 	rows, err := db.Query(stm)
