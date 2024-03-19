@@ -61,3 +61,4 @@ the response states the resource was not found.
 - The long URL is assumed to start with `www.` and be on HTTPS. If it's not,
 the redirect might not work as intended.
 - Deleting a short URL will not erase the hits history.
+- The expiration date is not validated in the payload. So the expiration date could be in the past. When fetching the resource, the resource will show up as expired.
